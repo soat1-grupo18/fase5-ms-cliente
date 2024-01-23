@@ -1,0 +1,84 @@
+_type: export
+__export_format: 4
+__export_date: 2024-01-23T02:08:04.848Z
+__export_source: insomnia.desktop.app:v2023.5.7
+resources:
+  - _id: req_ea9567efa0fc4bee8115152d8fc83090
+    parentId: wrk_116d427fd3c64cb08d5ecdb5ee31c0d5
+    modified: 1688603367699
+    created: 1687904640186
+    url: http://localhost:8080/clientes
+    name: /clientes
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+        	"nome": "John Carmack",
+        	"cpf": "11122233344",
+        	"telefone": "11911114444"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1687904630581.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_116d427fd3c64cb08d5ecdb5ee31c0d5
+    parentId: null
+    modified: 1705974595363
+    created: 1705974595363
+    name: Microsserviço Clientes
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_5adc18cfab7c4c65acea733a44b852d9
+    parentId: wrk_116d427fd3c64cb08d5ecdb5ee31c0d5
+    modified: 1705974832139
+    created: 1687905426113
+    url: http://localhost:8080/clientes/{% response 'body',
+      'req_ea9567efa0fc4bee8115152d8fc83090', 'b64::JC5jcGY=::46b', 'never', 60
+      %}
+    name: /clientes/{cpf}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1687904630537.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_b423493959a119531171b5d7e946a2e8ca90bf1e
+    parentId: wrk_116d427fd3c64cb08d5ecdb5ee31c0d5
+    modified: 1705974595370
+    created: 1705974595370
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1705974595370
+    _type: environment
+  - _id: jar_b423493959a119531171b5d7e946a2e8ca90bf1e
+    parentId: wrk_116d427fd3c64cb08d5ecdb5ee31c0d5
+    modified: 1705974595374
+    created: 1705974595374
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
