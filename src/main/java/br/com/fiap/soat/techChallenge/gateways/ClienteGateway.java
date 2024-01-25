@@ -1,9 +1,9 @@
 package br.com.fiap.soat.techChallenge.gateways;
 
-import br.com.fiap.soat.techChallenge.jpa.entities.ClienteJpaEntity;
-import br.com.fiap.soat.techChallenge.jpa.repositories.ClienteRepository;
 import br.com.fiap.soat.techChallenge.entities.Cliente;
 import br.com.fiap.soat.techChallenge.interfaces.gateways.ClienteGatewayPort;
+import br.com.fiap.soat.techChallenge.jpa.entities.ClienteJpaEntity;
+import br.com.fiap.soat.techChallenge.jpa.repositories.ClienteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 

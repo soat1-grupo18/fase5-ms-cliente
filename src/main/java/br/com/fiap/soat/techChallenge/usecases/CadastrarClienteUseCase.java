@@ -1,8 +1,8 @@
 package br.com.fiap.soat.techChallenge.usecases;
 
 import br.com.fiap.soat.techChallenge.entities.Cliente;
-import br.com.fiap.soat.techChallenge.interfaces.usecases.CadastrarClienteUseCasePort;
 import br.com.fiap.soat.techChallenge.interfaces.gateways.ClienteGatewayPort;
+import br.com.fiap.soat.techChallenge.interfaces.usecases.CadastrarClienteUseCasePort;
 
 public class CadastrarClienteUseCase implements CadastrarClienteUseCasePort {
     private final ClienteGatewayPort clienteGateway;

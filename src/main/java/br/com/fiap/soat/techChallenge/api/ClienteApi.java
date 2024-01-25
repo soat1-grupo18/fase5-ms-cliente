@@ -1,8 +1,8 @@
 package br.com.fiap.soat.techChallenge.api;
 
+import br.com.fiap.soat.techChallenge.api.requests.CadastrarClienteRequest;
 import br.com.fiap.soat.techChallenge.controllers.ClienteController;
 import br.com.fiap.soat.techChallenge.presenters.ClientePresenter;
-import br.com.fiap.soat.techChallenge.api.requests.CadastrarClienteRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
