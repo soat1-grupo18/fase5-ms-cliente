@@ -1,7 +1,8 @@
 package br.com.fiap.soat.techChallenge.config;
 
 import br.com.fiap.soat.techChallenge.controllers.ClienteController;
-import br.com.fiap.soat.techChallenge.interfaces.usecases.*;
+import br.com.fiap.soat.techChallenge.interfaces.usecases.CadastrarClienteUseCasePort;
+import br.com.fiap.soat.techChallenge.interfaces.usecases.IdentificarClienteUseCasePort;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
