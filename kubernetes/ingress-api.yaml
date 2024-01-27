@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: food-api
+  name: ms-cliente
   labels:
-    app: food-api
+    app: ms-cliente
   annotations:
     # docs: https://github.com/kubernetes/ingress-nginx/blob/main/docs/examples/rewrite/README.md
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -14,9 +14,9 @@ spec:
   - http:
       paths:
       - pathType: ImplementationSpecific
-        path: /food-api(/|$)(.*)
+        path: /ms-cliente(/|$)(.*)
         backend:
           service:
-            name: food-api
+            name: ms-cliente
             port: 
               number: 80

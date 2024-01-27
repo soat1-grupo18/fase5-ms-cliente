@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: food-api
+  name: ms-cliente
   labels:
-    app: food-api
+    app: ms-cliente
 spec:
   selector:
-    app: food-api
+    app: ms-cliente
   ports:
   - port: 80
     targetPort: 8080
