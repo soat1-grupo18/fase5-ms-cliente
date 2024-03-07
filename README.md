@@ -1,8 +1,8 @@
 <!-- omit from toc -->
 # FIAP - SOAT1 - GRUPO 18
 
-## Fase 4 - Microsserviço - Cliente
-Microsserviço de Cliente criado durante a fase 4 da Pós Tech Software Architecture da FIAP
+## Fase 5 - Microsserviço - Cliente
+Microsserviço de Cliente criado durante a fase 5 da Pós Tech Software Architecture da FIAP
 
 ![](https://github.com/pabloldias/soat1-grupo18/actions/workflows/build-and-test.yml/badge.svg)
 

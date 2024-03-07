@@ -4,7 +4,7 @@ import br.com.fiap.soat.techChallenge.entities.Cliente;
 import br.com.fiap.soat.techChallenge.interfaces.gateways.ClienteGatewayPort;
 import br.com.fiap.soat.techChallenge.interfaces.usecases.RemoverTodosOsDadosUseCasePort;
 
-import java.util.Optional;
+import java.util.UUID;
 
 public class RemoverTodosOsDadosClienteUseCase implements RemoverTodosOsDadosClienteUseCasePort {
     private final ClienteGatewayPort clienteGateway;
