@@ -36,6 +36,7 @@ public class ClienteApi {
     @Operation(summary = "Remover todos os dados do cliente", description = "Remove todos dados de um cliente informado.")
     @DeleteMapping("/clientes/{id}/all-data")
     public ResponseEntity<ClientePresenter> removerTodosOsDadosCliente(@PathVariable UUID id) {
-        return ResponseEntity.ok(this.clienteController.removerTodosOsDadosCliente(id));
+        this.clienteController.removerTodosOsDadosCliente(id);
+        return ResponseEntity.status(204).build();
     }
 }

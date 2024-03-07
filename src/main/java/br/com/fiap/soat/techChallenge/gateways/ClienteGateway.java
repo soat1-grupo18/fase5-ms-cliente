@@ -42,8 +42,7 @@ public class ClienteGateway implements ClienteGatewayPort {
         return clienteRepository.findById(id).map(cliente -> cliente.toDomain());
     }
 
-    @Override
     public void removerTodosOsDados(UUID id) {
-        return clienteRepository.deleteById(id);
+        clienteRepository.deleteById(id);
     }
 }

@@ -4,6 +4,7 @@ import br.com.fiap.soat.techChallenge.entities.Cliente;
 import br.com.fiap.soat.techChallenge.exceptions.ClienteNaoEncontradoException;
 import br.com.fiap.soat.techChallenge.interfaces.usecases.CadastrarClienteUseCasePort;
 import br.com.fiap.soat.techChallenge.interfaces.usecases.IdentificarClienteUseCasePort;
+import br.com.fiap.soat.techChallenge.interfaces.usecases.RemoverTodosOsDadosClienteUseCasePort;
 import br.com.fiap.soat.techChallenge.presenters.ClientePresenter;
 
 import java.util.UUID;
@@ -32,7 +33,7 @@ public class ClienteController {
         return ClientePresenter.fromDomain(cadastrarClienteUseCase.execute(cliente));
     }
 
-    public ClientePresenter removerTodosOsDadosCliente(UUID id) {
-        return ClientePresenter.fromDomain(removerTodosOsDadosClienteUseCase.execute(id));
+    public void removerTodosOsDadosCliente(UUID id) {
+        removerTodosOsDadosClienteUseCase.execute(id);
     }
 }
