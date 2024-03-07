@@ -20,4 +20,9 @@ public class UseCaseBeanConfig {
     public IdentificarClienteUseCasePort identificarClienteUseCasePort(ClienteGatewayPort clienteGatewayPort) {
         return new IdentificarClienteUseCase(clienteGatewayPort);
     }
+
+    @Bean
+    public RemoverTodosOsDadosClientesUseCasePort removerTodosOsDadosClientesUseCasePort(ClienteGatewayPort clienteGatewayPort) {
+        return new removerTodosOsDadosClientesUseCase(clienteGatewayPort);
+    }
 }

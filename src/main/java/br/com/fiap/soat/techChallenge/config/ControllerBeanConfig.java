@@ -11,7 +11,8 @@ public class ControllerBeanConfig {
 
     @Bean
     public ClienteController clienteController(CadastrarClienteUseCasePort cadastrarClienteUseCase,
-                                               IdentificarClienteUseCasePort identificarClienteUseCase) {
-        return new ClienteController(cadastrarClienteUseCase, identificarClienteUseCase);
+                                               IdentificarClienteUseCasePort identificarClienteUseCase,
+                                               RemoverTodosOsDadosClientesUseCasePort removerTodosOsDadosClientesUseCase) {
+        return new ClienteController(cadastrarClienteUseCase, identificarClienteUseCase, removerTodosOsDadosClientesUseCase);
     }
 }
