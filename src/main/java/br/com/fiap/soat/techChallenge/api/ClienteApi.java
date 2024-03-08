@@ -33,10 +33,10 @@ public class ClienteApi {
         return ResponseEntity.ok(this.clienteController.cadastrarCliente(cadastrarClienteRequest.toDomain()));
     }
 
-    @Operation(summary = "Remover todos os dados do cliente", description = "Remove todos dados de um cliente informado.")
-    @DeleteMapping("/clientes/{id}/all-data")
-    public ResponseEntity<ClientePresenter> removerTodosOsDadosCliente(@PathVariable UUID id) {
-        this.clienteController.removerTodosOsDadosCliente(id);
+    @Operation(summary = "Remover cliente", description = "Remove cliente informado.")
+    @DeleteMapping("/clientes")
+    public ResponseEntity<ClientePresenter> removerCliente(@PathVariable UUID id) {
+        this.clienteController.removerCliente(id);
         return ResponseEntity.status(204).build();
     }
 }
