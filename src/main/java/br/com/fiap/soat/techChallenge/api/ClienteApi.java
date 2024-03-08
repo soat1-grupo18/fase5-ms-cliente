@@ -34,7 +34,7 @@ public class ClienteApi {
     }
 
     @Operation(summary = "Remover cliente", description = "Remove cliente informado.")
-    @DeleteMapping("/clientes")
+    @DeleteMapping("/clientes/{id}")
     public ResponseEntity<ClientePresenter> removerCliente(@PathVariable UUID id) {
         this.clienteController.removerCliente(id);
         return ResponseEntity.status(204).build();
