@@ -1,6 +1,6 @@
-package br.com.fiap.soat.techChallenge.api;
+package br.com.fiap.soat.techChallenge.api.http;
 
-import br.com.fiap.soat.techChallenge.api.requests.CadastrarClienteRequest;
+import br.com.fiap.soat.techChallenge.api.http.requests.CadastrarClienteRequest;
 import br.com.fiap.soat.techChallenge.controllers.ClienteController;
 import br.com.fiap.soat.techChallenge.presenters.ClientePresenter;
 import io.swagger.v3.oas.annotations.Operation;

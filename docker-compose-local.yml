@@ -3,11 +3,22 @@ version: '3'
 services:
   db:
     image: postgres:15
-    restart: always
-    container_name: cliente_dbhost
     environment:
       - POSTGRES_DB=cliente_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
       - 5433:5432
+
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+    environment:
+      - SERVICES=sqs
+      - SQS_ENDPOINT_STRATEGY=off
+      - LOCALSTACK_HOST=localhost:4566
+      - DEBUG=${DEBUG:-0}
+    volumes:
+      - "./localstack:/etc/localstack/init/ready.d:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"

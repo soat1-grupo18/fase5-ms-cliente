@@ -1,6 +1,7 @@
-package br.com.fiap.soat.techChallenge.api;
+package br.com.fiap.soat.techChallenge.api.http;
 
-import br.com.fiap.soat.techChallenge.api.requests.CadastrarClienteRequest;
+import br.com.fiap.soat.techChallenge.api.http.ClienteApi;
+import br.com.fiap.soat.techChallenge.api.http.requests.CadastrarClienteRequest;
 import br.com.fiap.soat.techChallenge.config.CoreExceptionsAdvicer;
 import br.com.fiap.soat.techChallenge.controllers.ClienteController;
 import br.com.fiap.soat.techChallenge.entities.Cliente;
