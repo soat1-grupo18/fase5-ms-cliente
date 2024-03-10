@@ -9,9 +9,6 @@ import br.com.fiap.soat.techChallenge.presenters.ClientePresenter;
 
 import java.util.UUID;
 
-import org.springframework.stereotype.Controller;
-
-@Controller
 public class ClienteController {
 
     private final CadastrarClienteUseCasePort cadastrarClienteUseCase;
