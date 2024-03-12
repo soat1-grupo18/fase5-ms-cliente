@@ -15,9 +15,12 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.UUID;
 
 @ExtendWith(MockitoExtension.class)
 class ClienteApiTest {
@@ -69,6 +72,30 @@ class ClienteApiTest {
 
         verify(clienteController, times(1)).cadastrarCliente(any());
     }
+
+    @Test
+    void removerCliente() throws Exception {
+        Cliente cliente = new Cliente("Nome do Cliente", "12345678900", "32955557777");
+        cliente.setId(UUID.randomUUID());
+
+        doNothing().when(clienteController).removerCliente(cliente.getId());
+    
+        mockMvc.perform(delete("/clientes/{id}", cliente.getId()))
+                .andExpect(status().isNoContent());
+    
+        verify(clienteController, times(1)).removerCliente(cliente.getId());
+    }    
+
+    @Test
+    void removerClienteNaoExiste() throws Exception {
+        var id = UUID.randomUUID();
+        doNothing().when(clienteController).removerCliente(id);
+    
+        mockMvc.perform(delete("/clientes/{id}", id))
+                .andExpect(status().isNoContent());
+    
+        verify(clienteController, times(1)).removerCliente(id);
+    }    
 
     private static String asJsonString(final Object obj) {
         try {

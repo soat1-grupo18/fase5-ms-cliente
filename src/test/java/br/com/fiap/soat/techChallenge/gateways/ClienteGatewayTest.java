@@ -10,6 +10,11 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.UUID;
 
 @SpringBootTest
 @AutoConfigureTestDatabase
@@ -50,5 +55,17 @@ class ClienteGatewayTest {
         assertEquals(clienteJpa.getNome(), clienteIdentificado.getNome());
         assertEquals(clienteJpa.getCpf(), clienteIdentificado.getCpf());
         assertEquals(clienteJpa.getTelefone(), clienteIdentificado.getTelefone());
+    }
+
+    @Test
+    void removePorId() {
+        ClienteJpaEntity clienteJpa = clienteRepository.save(ClienteJpaEntity.fromDomain(new Cliente("Nome do Cliente", "12345678900", "32955557777")));
+        UUID id = clienteJpa.getId();
+
+        assertTrue(clienteRepository.findById(id).isPresent());
+
+        clienteGateway.removerCliente(id);
+            
+        assertFalse(clienteRepository.findById(id).isPresent());
     }
 }

@@ -9,6 +9,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @Tag(name = "API de Clientes")
 public class ClienteApi {
@@ -29,5 +31,12 @@ public class ClienteApi {
     @PostMapping("/clientes")
     public ResponseEntity<ClientePresenter> cadastrarCliente(@Valid @RequestBody CadastrarClienteRequest cadastrarClienteRequest) {
         return ResponseEntity.ok(this.clienteController.cadastrarCliente(cadastrarClienteRequest.toDomain()));
+    }
+
+    @Operation(summary = "Remover cliente", description = "Remove cliente informado.")
+    @DeleteMapping("/clientes/{id}")
+    public ResponseEntity<ClientePresenter> removerCliente(@PathVariable UUID id) {
+        this.clienteController.removerCliente(id);
+        return ResponseEntity.status(204).build();
     }
 }
