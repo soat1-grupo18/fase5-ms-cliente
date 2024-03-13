@@ -9,4 +9,5 @@ public interface ClienteGatewayPort {
     Cliente cadastra(Cliente cliente);
     Optional<Cliente> identificaPor(String cpf);
     Optional<Cliente> identificaPorId(UUID id);
+    void removerCliente(UUID id);
 }

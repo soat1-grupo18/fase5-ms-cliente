@@ -6,12 +6,10 @@ import br.com.fiap.soat.techChallenge.usecases.IdentificarClienteUseCase;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class IdentificarClienteStepDefinition {
