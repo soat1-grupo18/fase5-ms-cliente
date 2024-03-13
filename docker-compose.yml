@@ -10,12 +10,14 @@ services:
       - "8081:8080"
     depends_on:
       - db
+      - localstack
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/cliente_db
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SERVER_PORT=8080
+      - SPRING_CLOUD_AWS_SQS_ENDPOINT=http://localstack:4566
 
   db:
     image: postgres:15
@@ -33,7 +35,7 @@ services:
     environment:
       - SERVICES=sqs
       - SQS_ENDPOINT_STRATEGY=off
-      - LOCALSTACK_HOST=localhost:4566
+      - LOCALSTACK_HOST=localstack:4566
       - DEBUG=${DEBUG:-0}
     volumes:
       - "./localstack:/etc/localstack/init/ready.d:ro"
