@@ -14,7 +14,7 @@ public class PagamentoEvent {
     private String status;
 
     public Notificacao toEntity() {
-        if (clienteId == null || clienteId == "") return null;
+        if (clienteId == null || clienteId.equals("")) return null;
 
         if (Objects.equals(status, "PENDENTE")) return null;
 
